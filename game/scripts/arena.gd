@@ -1,0 +1,52 @@
+extends Node2D
+
+var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
+
+const BRICK_SET_SIZE: Vector2i = Vector2i(
+	16,	# width (columns)
+	8	# height (rows)
+)
+
+var brick_bounds: Vector2 = Vector2(
+	0.0,	# width
+	0.0		# height
+)
+
+func _ready() -> void:
+	set_brick_bounds()
+	generate_bricks(BRICK_SET_SIZE.x, BRICK_SET_SIZE.y)
+
+func set_brick_bounds() -> void:
+	var width = $BrickSet/BottomRightMarker.position.x - $BrickSet/TopLeftMarker.position.x
+	var height = $BrickSet/BottomRightMarker.position.y - $BrickSet/TopLeftMarker.position.y
+	
+	brick_bounds.x = width
+	brick_bounds.y = height
+	
+func generate_bricks(gridx: float, gridy: float) -> void:
+	# Calculate brick padding based on brick size and bounds size
+	var brick_size: Vector2 = Vector2(64.0, 32.0)	# FIXME: hard-coded brick size value - see if there's a better way to do this
+	
+	# The `+1` is to account for the additional padding to the left or right of the outer bricks
+	var xpad: float = (brick_bounds.x - ((gridx + 1) * brick_size.x)) / gridx
+	var ypad: float = (brick_bounds.y - ((gridy + 1) * brick_size.y)) / gridy
+	
+	print("Padding: " + str([xpad, ypad]))
+	print("Brick size: " + str(brick_size))
+	
+	# Generate the bricks (origin on centre)
+	var brick_pos: Vector2 = $BrickSet/TopLeftMarker.position + Vector2(xpad, ypad)
+	for y in range(gridy):
+		for x in range(gridx):
+			var brick: StaticBody2D = brick_scene.instantiate()
+			
+			brick.position = brick_pos + (0.5 * brick_size)	# brick_pos adjusted to be at the centre of the next brick
+			
+			# "increment" x to next brick's x
+			brick_pos.x += brick_size.x + xpad	# TODO: find way to measure and make sure that the padding is correct
+			
+			$BrickSet.add_child(brick)
+			
+		# reset x; "increment" y to next brick's y
+		brick_pos.x = $BrickSet/TopLeftMarker.position.x + xpad
+		brick_pos.y += brick_size.y + ypad
