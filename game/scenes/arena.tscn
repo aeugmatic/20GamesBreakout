@@ -1,3 +1,44 @@
 [gd_scene format=3 uid="uid://g76vgblifmd7"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7gw"]
+size = Vector2(1152, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e05a3"]
+size = Vector2(615, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl4x5"]
+size = Vector2(615, 33)
+
 [node name="Arena" type="Node2D" unique_id=567927689]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=903848284]
+
+[node name="Walls" type="Node2D" parent="." unique_id=243597922]
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=2000117098]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Ceiling" unique_id=1927624801]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=1241425578]
+position = Vector2(576, 16.5)
+shape = SubResource("RectangleShape2D_ug7gw")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1021170456]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/LeftWall" unique_id=908918661]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1009197963]
+position = Vector2(16.000011, 340.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_e05a3")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1468419578]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/RightWall" unique_id=26379390]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1254708433]
+position = Vector2(1136, 341)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_wl4x5")
+
+[node name="BrickSet" type="Node2D" parent="." unique_id=1514821119]
