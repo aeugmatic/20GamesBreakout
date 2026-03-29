@@ -6,6 +6,7 @@
 radius = 11.045361
 
 [node name="Ball" type="RigidBody2D" unique_id=2134702754]
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1764862935]
 texture = ExtResource("1_7s4qf")
