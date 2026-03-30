@@ -15,3 +15,6 @@ texture = ExtResource("1_7s4qf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=361561019]
 shape = SubResource("CircleShape2D_cxlvu")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2145179962]
+rect = Rect2(-11, -11, 22, 22)

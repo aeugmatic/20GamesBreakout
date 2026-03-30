@@ -17,3 +17,6 @@ texture = ExtResource("1_3xiby")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081594268]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_y7wee")
+
+[node name="BallSpawn" type="Marker2D" parent="." unique_id=133669076]
+position = Vector2(0, -40)

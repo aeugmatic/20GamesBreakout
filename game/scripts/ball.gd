@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var direction: Vector2 = Vector2(0, 1)
-var speed: float = 200.0
+var speed: float = 180.0
 
 func _physics_process(delta: float) -> void:
 	linear_velocity = speed * direction
