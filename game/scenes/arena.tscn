@@ -8,6 +8,14 @@ script = ExtResource("1_wl4x5")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=903848284]
 
+[node name="BrickGenZone" type="ColorRect" parent="." unique_id=1544700337]
+visible = false
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 320.0
+color = Color(1, 0.27058825, 1, 1)
+
 [node name="ArenaWalls" parent="." unique_id=112363658 instance=ExtResource("1_e05a3")]
 
 [node name="BrickSet" type="Node2D" parent="." unique_id=1514821119]

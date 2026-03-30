@@ -3,8 +3,8 @@ extends Node2D
 var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
 
 const BRICK_SET_SIZE: Vector2i = Vector2i(
-	16,	# width (columns)
-	8	# height (rows)
+	10,	# width (columns)
+	5	# height (rows)
 )
 
 var brick_bounds: Vector2 = Vector2(
@@ -25,14 +25,11 @@ func set_brick_bounds() -> void:
 	
 func generate_bricks(gridx: float, gridy: float) -> void:
 	# Calculate brick padding based on brick size and bounds size
-	var brick_size: Vector2 = Vector2(64.0, 32.0)	# FIXME: hard-coded brick size value - see if there's a better way to do this
+	var brick_size: Vector2 = Vector2(64.0, 32.0)
 	
 	# The `+1` is to account for the additional padding to the left or right of the outer bricks
-	var xpad: float = (brick_bounds.x - ((gridx + 1) * brick_size.x)) / gridx
-	var ypad: float = (brick_bounds.y - ((gridy + 1) * brick_size.y)) / gridy
-	
-	print("Padding: " + str([xpad, ypad]))
-	print("Brick size: " + str(brick_size))
+	var xpad: float = (brick_bounds.x - (gridx * brick_size.x)) / (gridx + 1)
+	var ypad: float = (brick_bounds.y - (gridy * brick_size.y)) / (gridy + 1)
 	
 	# Generate the bricks (origin on centre)
 	var brick_pos: Vector2 = $BrickSet/TopLeftMarker.position + Vector2(xpad, ypad)
