@@ -3,8 +3,8 @@ extends Node2D
 var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
 
 const BRICK_SET_SIZE: Vector2i = Vector2i(
-	10,	# width (columns)
-	5	# height (rows)
+	16,	# width (columns)
+	8	# height (rows)
 )
 
 var brick_bounds: Vector2 = Vector2(

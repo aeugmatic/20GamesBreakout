@@ -4,9 +4,9 @@ const SPEED: float = 300.0
 @export var decel: float = 7.0
 
 func _physics_process(delta: float) -> void:
+	velocity.y = 0.0
 	
 	handle_input()
-	
 	move_and_slide()
 
 func handle_input() -> void:

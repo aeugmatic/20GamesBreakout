@@ -21,7 +21,7 @@ color = Color(1, 0.27058825, 1, 1)
 [node name="BrickSet" type="Node2D" parent="." unique_id=1514821119]
 
 [node name="TopLeftMarker" type="Marker2D" parent="BrickSet" unique_id=1717915247]
-position = Vector2(64, 64)
+position = Vector2(32, 32)
 
 [node name="BottomRightMarker" type="Marker2D" parent="BrickSet" unique_id=2075426887]
-position = Vector2(1088, 320)
+position = Vector2(1120, 416)
