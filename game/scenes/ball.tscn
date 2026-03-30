@@ -18,3 +18,5 @@ shape = SubResource("CircleShape2D_cxlvu")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2145179962]
 rect = Rect2(-11, -11, 22, 22)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
