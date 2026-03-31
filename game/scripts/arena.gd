@@ -1,5 +1,7 @@
 extends Node2D
 
+signal brick_broken
+
 var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
 
 const BRICK_SET_SIZE: Vector2i = Vector2i(
@@ -15,6 +17,7 @@ var brick_bounds: Vector2 = Vector2(
 func _ready() -> void:
 	set_brick_bounds()
 	generate_bricks(BRICK_SET_SIZE.x, BRICK_SET_SIZE.y)
+	connect_brick_break_signals() # connect all the brick breaking signals
 
 func set_brick_bounds() -> void:
 	var width = $BrickSet/BottomRightMarker.position.x - $BrickSet/TopLeftMarker.position.x
@@ -47,3 +50,11 @@ func generate_bricks(gridx: float, gridy: float) -> void:
 		# reset x; "increment" y to next brick's y
 		brick_pos.x = $BrickSet/TopLeftMarker.position.x + xpad
 		brick_pos.y += brick_size.y + ypad
+
+func connect_brick_break_signals() -> void:
+	for b in $BrickSet.get_children():
+		if b is StaticBody2D:
+			b.broken.connect(_on_broken_brick)
+
+func _on_broken_brick() -> void:
+	brick_broken.emit()

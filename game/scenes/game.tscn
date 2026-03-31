@@ -16,5 +16,6 @@ position = Vector2(574, 604)
 [node name="Ball" parent="." unique_id=2134702754 instance=ExtResource("3_lnu2h")]
 position = Vector2(571, 566)
 
+[connection signal="brick_broken" from="Arena" to="." method="_on_brick_broken"]
 [connection signal="ball_launch_pressed" from="Paddle" to="." method="_on_ball_launch_pressed"]
 [connection signal="ball_offscreen" from="Ball" to="." method="_on_ball_offscreen"]

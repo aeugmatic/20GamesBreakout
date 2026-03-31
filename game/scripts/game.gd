@@ -2,6 +2,8 @@ extends Node
 
 const RESET_TIME: float = 1.0
 
+var score: int = 0
+
 # Initialise game
 func _ready() -> void:
 	$Ball.reset()
@@ -16,4 +18,7 @@ func _on_ball_offscreen() -> void:
 
 func _on_ball_launch_pressed() -> void:
 	$Ball.launch()
-	
+
+func _on_brick_broken() -> void:
+	score += 1
+	print("Score: " + str(score))
