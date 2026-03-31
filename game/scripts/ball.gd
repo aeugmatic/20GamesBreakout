@@ -2,10 +2,13 @@ extends RigidBody2D
 
 signal ball_offscreen
 
-var direction: Vector2 = Vector2(0, 1)
-var speed: float = 180.0
+const MIN_SPEED: float = 120.0
+const MAX_SPEED: float = 200.0
 
 var moving: bool = false
+var direction: Vector2 = Vector2(0, 1)
+var speed: float = MIN_SPEED
+var speed_incr: float = 0.0
 
 func _physics_process(delta: float) -> void:
 	moving = linear_velocity != Vector2.ZERO
@@ -28,6 +31,12 @@ func launch() -> void:
 	).normalized()
 	
 	linear_velocity = speed * direction
+
+func set_speed_incr(si: float) -> void:
+	speed_incr = si
+
+func speed_up() -> void:
+	speed += speed_incr
 
 func _on_screen_exited() -> void:
 	ball_offscreen.emit()

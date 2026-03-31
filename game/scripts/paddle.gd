@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal ball_launch_pressed
 
 const SPEED: float = 400.0
-@export var decel: float = 10.0
+@export var decel: float = 20.0
 
 func _physics_process(delta: float) -> void:
 	velocity.y = 0.0

@@ -2,8 +2,6 @@ extends Node2D
 
 signal brick_broken
 
-var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
-
 const BRICK_SET_SIZE: Vector2i = Vector2i(
 	16,	# width (columns)
 	8	# height (rows)
@@ -13,6 +11,7 @@ var brick_bounds: Vector2 = Vector2(
 	0.0,	# width
 	0.0		# height
 )
+var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
 
 func _ready() -> void:
 	set_brick_bounds()
