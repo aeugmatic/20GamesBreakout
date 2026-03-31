@@ -5,10 +5,10 @@ signal ball_offscreen
 var direction: Vector2 = Vector2(0, 1)
 var speed: float = 180.0
 
-var count: int = 0
+var moving: bool = false
 
 func _physics_process(delta: float) -> void:
-	var moving: bool = linear_velocity != Vector2.ZERO
+	moving = linear_velocity != Vector2.ZERO
 	
 	if moving:
 		var coll_info: KinematicCollision2D = move_and_collide(linear_velocity * delta)
@@ -17,9 +17,9 @@ func _physics_process(delta: float) -> void:
 			direction = direction.bounce(coll_info.get_normal()).normalized()
 			linear_velocity = speed * direction
 
-func reset(pos: Vector2) -> void:
+func reset() -> void:
 	linear_velocity = Vector2.ZERO
-	position = pos
+	moving = false
 
 func launch() -> void:
 	direction = Vector2(
