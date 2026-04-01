@@ -14,14 +14,11 @@ func _physics_process(delta: float) -> void:
 func handle_input(delta: float) -> void:
 	var input_axis = Input.get_axis("left", "right")
 	
-	# 0.0 = no input
+	# 0.0 = no input - so decelerate leftover velocity
 	if input_axis == 0.0:
 		velocity.x = move_toward(velocity.x, 0.0, decel * delta)
-		print("Decel: " + str(decel))
-		print("Delta: " + str(delta))
-		print("DeltaDecel: " + str(delta * decel))
-		print(velocity.x)
 	else:
+		# Only move if input detected
 		velocity.x = input_axis * SPEED
 	
 	if Input.is_action_just_pressed("launch_ball"):
