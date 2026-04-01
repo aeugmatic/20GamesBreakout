@@ -3,6 +3,7 @@ extends Node
 const RESET_TIME: float = 1.0
 
 var score: int = 0
+var lives: int = 3
 
 # Initialise game
 func _ready() -> void:
@@ -18,8 +19,19 @@ func _physics_process(delta: float) -> void:
 	if not $Ball.moving:
 		$Ball.position = $Paddle/BallSpawn.global_position
 
+func game_over() -> void:
+	get_tree().paused = true
+	print("Game Over")
+
 func _on_ball_offscreen() -> void:
 	await get_tree().create_timer(RESET_TIME).timeout
+	
+	# handle lives
+	if lives == 1:
+		game_over()
+	else:
+		lives -= 1
+	
 	$Ball.reset()
 
 func _on_ball_launch_pressed() -> void:
