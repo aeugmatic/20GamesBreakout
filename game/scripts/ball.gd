@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 signal ball_offscreen
 
@@ -11,17 +11,17 @@ var speed: float = MIN_SPEED
 var speed_incr: float = 0.0
 
 func _physics_process(delta: float) -> void:
-	moving = linear_velocity != Vector2.ZERO
+	moving = velocity != Vector2.ZERO
 	
 	if moving:
-		var coll_info: KinematicCollision2D = move_and_collide(linear_velocity * delta)
+		var coll_info: KinematicCollision2D = move_and_collide(velocity * delta)
 	
 		if coll_info != null:
 			direction = direction.bounce(coll_info.get_normal()).normalized()
-			linear_velocity = speed * direction
+			velocity = speed * direction
 
 func reset() -> void:
-	linear_velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	moving = false
 
 func launch() -> void:
@@ -30,7 +30,7 @@ func launch() -> void:
 		randf_range(0, -1)
 	).normalized()
 	
-	linear_velocity = speed * direction
+	velocity = speed * direction
 
 func set_speed_incr(si: float) -> void:
 	speed_incr = si

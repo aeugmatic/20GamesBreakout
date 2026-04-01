@@ -6,8 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cxlvu"]
 radius = 11.045361
 
-[node name="Ball" type="RigidBody2D" unique_id=462304981]
-gravity_scale = 0.0
+[node name="Ball" type="CharacterBody2D" unique_id=1551556560]
 script = ExtResource("1_cxlvu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1764862935]
