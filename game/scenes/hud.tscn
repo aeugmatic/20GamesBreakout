@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cubs81nm6gsmq"]
+
+[ext_resource type="Texture2D" uid="uid://d36ow0csh5jgr" path="res://assets/life.png" id="1_ahhtf"]
+
+[node name="HUD" type="Control" unique_id=892358932]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LivesContainer" type="HBoxContainer" parent="." unique_id=881812600]
+layout_mode = 0
+offset_right = 101.0
+offset_bottom = 31.0
+
+[node name="Life1" type="TextureRect" parent="LivesContainer" unique_id=1539833234]
+layout_mode = 2
+texture = ExtResource("1_ahhtf")
+expand_mode = 2
+
+[node name="Life2" type="TextureRect" parent="LivesContainer" unique_id=991737332]
+layout_mode = 2
+texture = ExtResource("1_ahhtf")
+expand_mode = 2
+
+[node name="Life3" type="TextureRect" parent="LivesContainer" unique_id=1646279516]
+layout_mode = 2
+texture = ExtResource("1_ahhtf")
+expand_mode = 2
