@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cubs81nm6gsmq"]
 
 [ext_resource type="Texture2D" uid="uid://d36ow0csh5jgr" path="res://assets/life.png" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://c8wskltwkpfc6" path="res://scripts/hud.gd" id="1_oo0fn"]
 
 [node name="HUD" type="Control" unique_id=892358932]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oo0fn")
 
 [node name="LivesContainer" type="HBoxContainer" parent="." unique_id=881812600]
 layout_mode = 0

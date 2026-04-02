@@ -24,14 +24,15 @@ func game_over() -> void:
 	print("Game Over")
 
 func _on_ball_offscreen() -> void:
-	await get_tree().create_timer(RESET_TIME).timeout
-	
 	# handle lives
 	if lives == 1:
 		game_over()
 	else:
 		lives -= 1
+	$HUD.lose_life()
 	
+	# Handle ball reset
+	await get_tree().create_timer(RESET_TIME).timeout
 	$Ball.reset()
 
 func _on_ball_launch_pressed() -> void:
