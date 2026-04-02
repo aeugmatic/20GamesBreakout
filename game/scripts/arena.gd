@@ -1,9 +1,10 @@
 extends Node2D
 
 signal brick_broken
+signal bricks_cleared
 
 const BRICK_SET_SIZE: Vector2i = Vector2i(
-	16,	# width (columns)
+	13,	# width (columns)
 	8	# height (rows)
 )
 
@@ -17,6 +18,15 @@ func _ready() -> void:
 	set_brick_bounds()
 	generate_bricks(BRICK_SET_SIZE.x, BRICK_SET_SIZE.y)
 	connect_brick_break_signals() # connect all the brick breaking signals
+
+func _process(delta: float) -> void:
+	# Clear bricks 
+	if Input.is_action_just_pressed("DEBUG_clear_bricks"):
+		for b in $BrickSet.get_children():
+			b.queue_free()
+	
+	if len($BrickSet.get_children()) == 0:
+		bricks_cleared.emit()
 
 func set_brick_bounds() -> void:
 	var width = $BrickSet/BottomRightMarker.position.x - $BrickSet/TopLeftMarker.position.x

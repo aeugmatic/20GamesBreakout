@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 signal ball_offscreen
 
-const MIN_SPEED: float = 200.0
-const MAX_SPEED: float = 250.0
+const MIN_SPEED: float = 230.0
+const MAX_SPEED: float = 300.0
 
 var moving: bool = false
 var direction: Vector2 = Vector2(0, 1)

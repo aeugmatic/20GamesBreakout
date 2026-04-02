@@ -8,6 +8,8 @@ const SPEED: float = 450.0
 func _physics_process(delta: float) -> void:
 	velocity.y = 0.0
 	
+	print("Paddle: velocity.y = " + str(velocity.y))
+	
 	handle_input(delta)
 	move_and_slide()
 
