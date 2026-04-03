@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cj3opn5ecqbew"]
 
-[ext_resource type="Script" uid="uid://bm1o30rbpei04" path="res://scripts/brick.gd" id="1_0w5h4"]
+[ext_resource type="Script" uid="uid://bm1o30rbpei04" path="res://scripts/main_game/brick.gd" id="1_0w5h4"]
 [ext_resource type="Texture2D" uid="uid://cmdds1t72f441" path="res://assets/element_blue_rectangle.png" id="1_5l4w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w5h4"]

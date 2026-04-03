@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cubs81nm6gsmq"]
 
 [ext_resource type="Texture2D" uid="uid://d36ow0csh5jgr" path="res://assets/life.png" id="1_ahhtf"]
-[ext_resource type="Script" uid="uid://c8wskltwkpfc6" path="res://scripts/hud.gd" id="1_oo0fn"]
+[ext_resource type="Script" uid="uid://c8wskltwkpfc6" path="res://scripts/main_game/hud.gd" id="1_oo0fn"]
 
 [node name="HUD" type="Control" unique_id=892358932]
 layout_mode = 3

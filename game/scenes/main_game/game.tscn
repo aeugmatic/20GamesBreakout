@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b0bfvlingngcc"]
 
-[ext_resource type="Script" uid="uid://3hwuibdyfc13" path="res://scripts/game.gd" id="1_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://g76vgblifmd7" path="res://scenes/arena.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bthjpvryvepll" path="res://scenes/paddle.tscn" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cbeiur6u8m8yp" path="res://scenes/ball.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cubs81nm6gsmq" path="res://scenes/hud.tscn" id="5_iywne"]
+[ext_resource type="Script" uid="uid://3hwuibdyfc13" path="res://scripts/main_game/game.gd" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://g76vgblifmd7" path="res://scenes/main_game/arena.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bthjpvryvepll" path="res://scenes/main_game/paddle.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cbeiur6u8m8yp" path="res://scenes/main_game/ball.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cubs81nm6gsmq" path="res://scenes/main_game/hud.tscn" id="5_iywne"]
 
 [node name="Game" type="Node" unique_id=2128206838]
 script = ExtResource("1_lbhrr")

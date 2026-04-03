@@ -12,7 +12,7 @@ var brick_bounds: Vector2 = Vector2(
 	0.0,	# width
 	0.0		# height
 )
-var brick_scene: PackedScene = preload("res://scenes/brick.tscn")
+var brick_scene: PackedScene = preload("res://scenes/main_game/brick.tscn")
 
 func _ready() -> void:
 	set_brick_bounds()

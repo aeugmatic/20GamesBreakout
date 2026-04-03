@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://g76vgblifmd7"]
 
-[ext_resource type="PackedScene" uid="uid://dio2kgx7xqq1e" path="res://scenes/arena_walls.tscn" id="1_e05a3"]
-[ext_resource type="Script" uid="uid://bdc6u0fov34p6" path="res://scripts/arena.gd" id="1_wl4x5"]
+[ext_resource type="PackedScene" uid="uid://dio2kgx7xqq1e" path="res://scenes/main_game/arena_walls.tscn" id="1_e05a3"]
+[ext_resource type="Script" uid="uid://bdc6u0fov34p6" path="res://scripts/main_game/arena.gd" id="1_wl4x5"]
 
 [node name="Arena" type="Node2D" unique_id=567927689]
 script = ExtResource("1_wl4x5")
