@@ -27,14 +27,14 @@ texture = ExtResource("1_xqga4")
 
 [node name="Options" type="Control" parent="." unique_id=1531566422]
 layout_mode = 1
-anchor_left = 0.5
-anchor_top = 0.6
-anchor_right = 0.5
-anchor_bottom = 0.6
-offset_left = -114.75
-offset_top = -159.75
-offset_right = 114.75
-offset_bottom = 134.19998
+anchor_left = 0.4
+anchor_top = 0.35300002
+anchor_right = 0.6
+anchor_bottom = 0.80700004
+offset_left = 0.4499817
+offset_top = 0.306015
+offset_right = -0.4500122
+offset_bottom = 0.063964844
 grow_horizontal = 2
 grow_vertical = 2
 

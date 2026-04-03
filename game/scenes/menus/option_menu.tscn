@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bi1l0jl52f8re"]
 
+[ext_resource type="Script" uid="uid://dt47w75jbwdyd" path="res://scripts/menus/option_menu.gd" id="1_3jjhq"]
+
 [node name="OptionMenu" type="Control" unique_id=930274595]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,154 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3jjhq")
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=417220210]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27400002
+anchor_top = 0.096
+anchor_right = 0.726
+anchor_bottom = 0.90400004
+offset_left = -0.14801025
+offset_top = 0.29199982
+offset_right = 0.14801025
+offset_bottom = -0.29205322
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelTitle" type="Label" parent="OptionsPanel" unique_id=1256789957]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+offset_left = -61.0
+offset_right = 61.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Sliders" type="Control" parent="OptionsPanel" unique_id=1934667279]
+layout_mode = 1
+anchor_left = 0.001
+anchor_top = 0.31800002
+anchor_right = 1.001
+anchor_bottom = 0.68200004
+offset_left = -0.021000028
+offset_top = -0.06401062
+offset_right = -0.020996094
+offset_bottom = 0.063964844
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicSlider" type="Control" parent="OptionsPanel/Sliders" unique_id=419525820]
+layout_mode = 1
+anchor_left = 0.094000004
+anchor_right = 0.906
+anchor_bottom = 0.35200003
+offset_left = 0.025997162
+offset_right = -0.026000977
+offset_bottom = -0.056007385
+grow_horizontal = 2
+
+[node name="OptionLabel" type="Label" parent="OptionsPanel/Sliders/MusicSlider" unique_id=1451129889]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsPanel/Sliders/MusicSlider" unique_id=1287969822]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+
+[node name="ValueLabel" type="Label" parent="OptionsPanel/Sliders/MusicSlider" unique_id=26745221]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "50%"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="Control" parent="OptionsPanel/Sliders" unique_id=1692838143]
+layout_mode = 1
+anchor_left = 0.094000004
+anchor_top = 0.648
+anchor_right = 0.906
+anchor_bottom = 1.0
+offset_left = 0.025997162
+offset_top = 0.055999756
+offset_right = -0.026000977
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="OptionLabel" type="Label" parent="OptionsPanel/Sliders/SFXSlider" unique_id=1753220933]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsPanel/Sliders/SFXSlider" unique_id=667169622]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+
+[node name="ValueLabel" type="Label" parent="OptionsPanel/Sliders/SFXSlider" unique_id=411507966]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "50%"
+horizontal_alignment = 1
+
+[node name="ExitButton" type="Button" parent="OptionsPanel" unique_id=352324531]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.95
+anchor_right = 0.5
+anchor_bottom = 0.95
+offset_left = -57.25
+offset_top = -42.0
+offset_right = 57.25
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+
+[connection signal="value_changed" from="OptionsPanel/Sliders/MusicSlider/HSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/Sliders/SFXSlider/HSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="OptionsPanel/ExitButton" to="." method="_on_exit_button_pressed"]
