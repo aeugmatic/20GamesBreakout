@@ -7,13 +7,11 @@ var lives: int = 3
 
 # Initialise game
 func _ready() -> void:
-	$Ball.reset()
-	
 	# Set ball speed increment value
 	var no_bricks = $Arena.BRICK_SET_SIZE.x * $Arena.BRICK_SET_SIZE.y
 	var speedup_incr = ($Ball.MAX_SPEED - $Ball.MIN_SPEED) / no_bricks
 	$Ball.set_speed_incr(speedup_incr) # FIXME: seems to go below min value sometimes for some reason
-	print("Speed: " + str($Ball.MIN_SPEED))
+	$Ball.reset()
 
 func _physics_process(delta: float) -> void:
 	if not $Ball.moving:
@@ -42,6 +40,7 @@ func _on_brick_broken() -> void:
 	# Increment score
 	score += 1
 	print("Score: " + str(score))
+	$HUD.set_score(score)
 	
 	# Speed up ball
 	$Ball.speed_up()

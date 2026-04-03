@@ -22,3 +22,6 @@ func lose_life() -> void:
 	print("HUD: life lost")
 	life_rects[cl_idx].texture = empty_life_texture
 	cl_idx -= 1
+
+func set_score(score: int) -> void:
+	$Score/ScoreValue.text = str(score)
