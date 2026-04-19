@@ -85,36 +85,51 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="EasyCheckBox" type="CheckBox" parent="Panel/Options/DiffSelect/DiffButtonContainer" unique_id=701919579]
+[node name="EasyCheckBox" type="CheckBox" parent="Panel/Options/DiffSelect/DiffButtonContainer" unique_id=701919579 groups=["diff_checkbox"]]
 layout_mode = 2
 button_group = SubResource("ButtonGroup_0sj56")
 text = "Easy"
 
-[node name="MedCheckBox" type="CheckBox" parent="Panel/Options/DiffSelect/DiffButtonContainer" unique_id=552159043]
+[node name="MedCheckBox" type="CheckBox" parent="Panel/Options/DiffSelect/DiffButtonContainer" unique_id=552159043 groups=["diff_checkbox"]]
 layout_mode = 2
 button_group = SubResource("ButtonGroup_0sj56")
 text = "Medium"
 
-[node name="HardCheckBox" type="CheckBox" parent="Panel/Options/DiffSelect/DiffButtonContainer" unique_id=776476081]
+[node name="HardCheckBox" type="CheckBox" parent="Panel/Options/DiffSelect/DiffButtonContainer" unique_id=776476081 groups=["diff_checkbox"]]
 layout_mode = 2
 button_group = SubResource("ButtonGroup_0sj56")
 text = "Hard"
 
-[node name="CustomCheckBox" type="CheckBox" parent="Panel/Options/DiffSelect/DiffButtonContainer" unique_id=2122907511]
+[node name="CustomCheckBox" type="CheckBox" parent="Panel/Options/DiffSelect/DiffButtonContainer" unique_id=2122907511 groups=["diff_checkbox"]]
 layout_mode = 2
 button_group = SubResource("ButtonGroup_0sj56")
 text = "Custom"
 
-[node name="BallSpeedUpSelect" type="Control" parent="Panel/Options" unique_id=1556361327]
+[node name="GameOptions" type="Control" parent="Panel/Options" unique_id=723419994]
+layout_mode = 1
+anchor_left = -0.018000001
+anchor_top = 0.342
+anchor_right = 1.018
+anchor_bottom = 1.0
+offset_left = 0.23600101
+offset_top = 0.06199646
+offset_right = -0.23602295
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BallSpeedUpSelect" type="Control" parent="Panel/Options/GameOptions" unique_id=1556361327]
 layout_mode = 1
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.66400003
-offset_bottom = -0.0960083
+offset_left = 11.5
+offset_top = -58.0
+offset_right = 11.5
+offset_bottom = -58.09601
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel/Options/BallSpeedUpSelect" unique_id=3996692]
+[node name="Label" type="Label" parent="Panel/Options/GameOptions/BallSpeedUpSelect" unique_id=3996692]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -125,7 +140,7 @@ offset_bottom = 11.5
 grow_vertical = 2
 text = "Ball Speed-up:"
 
-[node name="CheckButton" type="CheckButton" parent="Panel/Options/BallSpeedUpSelect" unique_id=950680146]
+[node name="CheckButton" type="CheckButton" parent="Panel/Options/GameOptions/BallSpeedUpSelect" unique_id=950680146]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.46625766
@@ -136,18 +151,19 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="PaddleShrinkSelect" type="Control" parent="Panel/Options" unique_id=247726255]
+[node name="PaddleShrinkSelect" type="Control" parent="Panel/Options/GameOptions" unique_id=247726255]
 layout_mode = 1
 anchor_top = 0.646
 anchor_right = 0.984
 anchor_bottom = 0.823
-offset_top = 0.005996704
-offset_right = 10.815979
-offset_bottom = 0.0029907227
+offset_left = 11.5
+offset_top = -41.058
+offset_right = 22.315979
+offset_bottom = -41.061005
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="Panel/Options/PaddleShrinkSelect" unique_id=19884817]
+[node name="Label" type="Label" parent="Panel/Options/GameOptions/PaddleShrinkSelect" unique_id=19884817]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -158,7 +174,7 @@ offset_bottom = 11.5
 grow_vertical = 2
 text = "Paddle Shrinking:"
 
-[node name="CheckButton" type="CheckButton" parent="Panel/Options/PaddleShrinkSelect" unique_id=853464647]
+[node name="CheckButton" type="CheckButton" parent="Panel/Options/GameOptions/PaddleShrinkSelect" unique_id=853464647]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.46627754
@@ -202,3 +218,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Back"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Panel/Options/DiffSelect/DiffButtonContainer/EasyCheckBox" to="." method="_on_easy_check_box_pressed"]
+[connection signal="pressed" from="Panel/Options/DiffSelect/DiffButtonContainer/MedCheckBox" to="." method="_on_med_check_box_pressed"]
+[connection signal="pressed" from="Panel/Options/DiffSelect/DiffButtonContainer/HardCheckBox" to="." method="_on_hard_check_box_pressed"]
+[connection signal="pressed" from="Panel/Options/DiffSelect/DiffButtonContainer/CustomCheckBox" to="." method="_on_custom_check_box_pressed"]
