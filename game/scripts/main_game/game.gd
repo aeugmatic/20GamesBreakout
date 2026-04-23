@@ -1,7 +1,7 @@
 extends Node
 
 const RESET_TIME: float = 1.0
-const PADDLE_SHRINK_SIZE: float = 0.9
+const PADDLE_SHRINK_SIZE: float = 0.8
 
 var score: int = 0
 var lives: int = 3
@@ -56,7 +56,9 @@ func _on_brick_broken() -> void:
 func _on_arena_bricks_cleared() -> void:
 	# Shrink paddle if needed
 	if Global.game_settings["paddle-shrink"]:
-		$Paddle.size.x *= PADDLE_SHRINK_SIZE
+		$Paddle/CollisionShape2D.scale *= PADDLE_SHRINK_SIZE
+		$Paddle/Sprite2D.scale *= PADDLE_SHRINK_SIZE
+		print("Game: CS2D paddle scale = " + str($Paddle/CollisionShape2D.scale))
 	
 	# Showcase "Grid cleared" text
 	pass

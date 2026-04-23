@@ -13,16 +13,17 @@ var brick_bounds: Vector2 = Vector2(
 	0.0		# height
 )
 var brick_scene: PackedScene = preload("res://scenes/main_game/brick.tscn")
+var cleared: bool = false
 
 func _ready() -> void:
 	set_brick_bounds()
 	generate_bricks(BRICK_SET_SIZE.x, BRICK_SET_SIZE.y)
 	connect_brick_break_signals() # connect all the brick breaking signals
 
-func _process(delta: float) -> void:
-	if len($BrickSet.get_children()) == 0:
-		print("Arena: brick cleared")
+func _process(_delta: float) -> void:
+	if not cleared and len($BrickSet.get_children()) == 0:
 		bricks_cleared.emit()
+		cleared = true
 
 func set_brick_bounds() -> void:
 	var width = $BottomRightMarker.position.x - $TopLeftMarker.position.x
@@ -32,6 +33,8 @@ func set_brick_bounds() -> void:
 	brick_bounds.y = height
 	
 func generate_bricks(gridx: float = BRICK_SET_SIZE.x, gridy: float = BRICK_SET_SIZE.y) -> void:
+	cleared = false
+	
 	# Calculate brick padding based on brick size and bounds size
 	var brick_size: Vector2 = Vector2(64.0, 32.0)
 	
@@ -40,7 +43,6 @@ func generate_bricks(gridx: float = BRICK_SET_SIZE.x, gridy: float = BRICK_SET_S
 	var ypad: float = (brick_bounds.y - (gridy * brick_size.y)) / (gridy + 1)
 	
 	# Generate the bricks (origin on centre)
-	print("Game: " + str($TopLeftMarker))
 	var brick_pos: Vector2 = $TopLeftMarker.position + Vector2(xpad, ypad)
 	for y in range(gridy):
 		for x in range(gridx):

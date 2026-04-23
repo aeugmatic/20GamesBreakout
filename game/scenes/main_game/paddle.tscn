@@ -13,9 +13,9 @@ script = ExtResource("1_y7wee")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1086821571]
 texture = ExtResource("1_3xiby")
 
+[node name="BallSpawn" type="Marker2D" parent="." unique_id=133669076]
+position = Vector2(0, -40)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2081594268]
 shape = SubResource("RectangleShape2D_y7wee")
 one_way_collision_margin = 5.0
-
-[node name="BallSpawn" type="Marker2D" parent="." unique_id=133669076]
-position = Vector2(0, -40)
