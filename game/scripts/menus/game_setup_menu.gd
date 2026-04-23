@@ -50,6 +50,7 @@ func set_game_options() -> void:
 			$Panel/Options/GameOptions/BallSpeedUpSelect/CheckButton.button_pressed = true
 			$Panel/Options/GameOptions/PaddleShrinkSelect/CheckButton.button_pressed = true
 
+# Difficulty checkbox signals
 func _on_easy_check_box_pressed() -> void:
 	Global.set_difficulty("easy")
 	set_ui_diff_options()
@@ -65,3 +66,10 @@ func _on_hard_check_box_pressed() -> void:
 func _on_custom_check_box_pressed() -> void:
 	Global.set_difficulty("custom")
 	set_ui_diff_options()
+
+# Other signals
+func _on_start_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_game/game.tscn")
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")

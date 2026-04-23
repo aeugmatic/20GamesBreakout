@@ -3,15 +3,15 @@ extends Node
 const DIFF_SETTINGS: Dictionary = {
 	"easy": {
 		"ball-speedup": false,
-		"paddle_shrink": false
+		"paddle-shrink": false
 	},
 	"medium": {
 		"ball-speedup": true,
-		"paddle_shrink": false
+		"paddle-shrink": false
 	},
 	"hard": {
 		"ball-speedup": true,
-		"paddle_shrink": true
+		"paddle-shrink": true
 	}
 }
 

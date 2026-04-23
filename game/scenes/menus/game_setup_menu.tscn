@@ -223,3 +223,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Panel/Options/DiffSelect/DiffButtonContainer/MedCheckBox" to="." method="_on_med_check_box_pressed"]
 [connection signal="pressed" from="Panel/Options/DiffSelect/DiffButtonContainer/HardCheckBox" to="." method="_on_hard_check_box_pressed"]
 [connection signal="pressed" from="Panel/Options/DiffSelect/DiffButtonContainer/CustomCheckBox" to="." method="_on_custom_check_box_pressed"]
+[connection signal="pressed" from="Panel/ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/ButtonContainer/BackButton" to="." method="_on_back_button_pressed"]

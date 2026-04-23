@@ -20,5 +20,6 @@ position = Vector2(571, 566)
 [node name="HUD" parent="." unique_id=892358932 instance=ExtResource("5_iywne")]
 
 [connection signal="brick_broken" from="Arena" to="." method="_on_brick_broken"]
+[connection signal="bricks_cleared" from="Arena" to="." method="_on_arena_bricks_cleared"]
 [connection signal="ball_launch_pressed" from="Paddle" to="." method="_on_ball_launch_pressed"]
 [connection signal="ball_offscreen" from="Ball" to="." method="_on_ball_offscreen"]
