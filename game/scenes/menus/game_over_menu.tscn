@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://b0ytutdyic5bs"]
+
+[ext_resource type="Script" uid="uid://dquoaqvpgviwq" path="res://scripts/menus/game_over_menu.gd" id="1_7ldfy"]
+
+[node name="GameOverMenu" type="Control" unique_id=90348593]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ldfy")
+
+[node name="MainPanel" type="Panel" parent="." unique_id=497006227]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.261
+anchor_top = 0.080000006
+anchor_right = 0.739
+anchor_bottom = 0.92
+offset_left = 0.32800293
+offset_top = 0.15999603
+offset_right = -0.32800293
+offset_bottom = -0.16003418
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="MainPanel" unique_id=1932596280]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.05
+anchor_right = 0.65800005
+anchor_bottom = 0.133
+offset_left = 66.899994
+offset_right = -66.900024
+offset_bottom = -22.151997
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Game Over"
+
+[node name="ButtonContainer" type="Control" parent="MainPanel" unique_id=1198665191]
+layout_mode = 1
+anchor_left = 0.11
+anchor_top = 0.8832117
+anchor_right = 0.89
+anchor_bottom = 0.98715335
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="NewGameButton" type="Button" parent="MainPanel/ButtonContainer" unique_id=1522917675]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24578749
+anchor_top = 0.22787932
+anchor_right = 0.45421246
+anchor_bottom = 0.77212065
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitToMenuButton" type="Button" parent="MainPanel/ButtonContainer" unique_id=1951054395]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5457875
+anchor_top = 0.22787932
+anchor_right = 0.7542125
+anchor_bottom = 0.77212065
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit to Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="ResultPanel" type="Panel" parent="MainPanel" unique_id=2144015835]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.080000006
+anchor_top = 0.261
+anchor_right = 0.92
+anchor_bottom = 0.739
+offset_top = 0.015991211
+offset_bottom = -0.016021729
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score" type="Control" parent="MainPanel/ResultPanel" unique_id=1702493195]
+layout_mode = 1
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="TextLabel" type="Label" parent="MainPanel/ResultPanel/Score" unique_id=1137761707]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="MainPanel/ResultPanel/Score" unique_id=373311265]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Control" parent="MainPanel/ResultPanel" unique_id=168276362]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextLabel" type="Label" parent="MainPanel/ResultPanel/HighScore" unique_id=851432912]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+offset_left = -41.5
+offset_right = 41.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "High Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="MainPanel/ResultPanel/HighScore" unique_id=2067350074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainPanel/ButtonContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MainPanel/ButtonContainer/ExitToMenuButton" to="." method="_on_exit_to_menu_button_pressed"]

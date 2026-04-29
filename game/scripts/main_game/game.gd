@@ -16,6 +16,9 @@ func _ready() -> void:
 		
 		$Ball.set_speed_incr(speedup_incr) # FIXME: seems to go below min value sometimes for some reason
 		$Ball.reset()
+	
+	# Hide game over menu
+	$GameOverMenu.hide()
 
 func _physics_process(_delta: float) -> void:
 	if not $Ball.moving:
@@ -23,10 +26,19 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("DEBUG_clear_bricks"):
 		$Arena.clear_grid()
+	if Input.is_action_just_pressed("DEBUG_game_over"):
+		game_over()
 
 func game_over() -> void:
 	get_tree().paused = true
-	print("Game Over")
+	
+	# Set high score if needed
+	if score > Global.high_score:
+		Global.high_score = score
+	
+	# Bring up game over menu
+	$GameOverMenu.set_score_values(score)
+	$GameOverMenu.show()
 
 func _on_ball_offscreen() -> void:
 	# handle lives
@@ -46,7 +58,6 @@ func _on_ball_launch_pressed() -> void:
 func _on_brick_broken() -> void:
 	# Increment score
 	score += 1
-	print("Score: " + str(score))
 	$HUD.set_score(score)
 	
 	# Speed up ball
@@ -58,7 +69,6 @@ func _on_arena_bricks_cleared() -> void:
 	if Global.game_settings["paddle-shrink"]:
 		$Paddle/CollisionShape2D.scale *= PADDLE_SHRINK_SIZE
 		$Paddle/Sprite2D.scale *= PADDLE_SHRINK_SIZE
-		print("Game: CS2D paddle scale = " + str($Paddle/CollisionShape2D.scale))
 	
 	# Showcase "Grid cleared" text
 	pass

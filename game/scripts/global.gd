@@ -19,6 +19,7 @@ var music_vol: float = 50.0
 var sfx_vol: float = 50.0
 var difficulty: String = "easy"
 var game_settings: Dictionary = DIFF_SETTINGS[difficulty] # Easy as default difficulty
+var high_score: int = 0
 
 func set_difficulty(diff: String) -> void:
 	difficulty = diff
