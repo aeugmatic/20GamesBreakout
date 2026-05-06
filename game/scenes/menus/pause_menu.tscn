@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cnsqtpea2veep"]
 
+[ext_resource type="Script" uid="uid://cy6536lnwol42" path="res://scripts/menus/pause_menu.gd" id="1_fwndu"]
+
 [node name="PauseMenu" type="Control" unique_id=1701659245]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,183 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fwndu")
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=2111793031]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27400002
+anchor_top = 0.096
+anchor_right = 0.726
+anchor_bottom = 0.90400004
+offset_left = -0.14801025
+offset_top = 0.29199982
+offset_right = 0.14801025
+offset_bottom = -0.29205322
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelTitle" type="Label" parent="OptionsPanel" unique_id=590735870]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+offset_left = -61.0
+offset_right = 61.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Sliders" type="Control" parent="OptionsPanel" unique_id=1652438155]
+layout_mode = 1
+anchor_left = 0.001
+anchor_top = 0.31800002
+anchor_right = 1.001
+anchor_bottom = 0.68200004
+offset_left = -0.021000028
+offset_top = -0.06401062
+offset_right = -0.020996094
+offset_bottom = 0.063964844
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicSlider" type="Control" parent="OptionsPanel/Sliders" unique_id=910198763]
+layout_mode = 1
+anchor_left = 0.094000004
+anchor_right = 0.906
+anchor_bottom = 0.35200003
+offset_left = 0.025997162
+offset_right = -0.026000977
+offset_bottom = -0.056007385
+grow_horizontal = 2
+
+[node name="OptionLabel" type="Label" parent="OptionsPanel/Sliders/MusicSlider" unique_id=157104696]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsPanel/Sliders/MusicSlider" unique_id=566144492]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+
+[node name="ValueLabel" type="Label" parent="OptionsPanel/Sliders/MusicSlider" unique_id=875354727]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "50%"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="Control" parent="OptionsPanel/Sliders" unique_id=688143223]
+layout_mode = 1
+anchor_left = 0.094000004
+anchor_top = 0.648
+anchor_right = 0.906
+anchor_bottom = 1.0
+offset_left = 0.025997162
+offset_top = 0.055999756
+offset_right = -0.026000977
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="OptionLabel" type="Label" parent="OptionsPanel/Sliders/SFXSlider" unique_id=408844971]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="OptionsPanel/Sliders/SFXSlider" unique_id=2032177703]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+
+[node name="ValueLabel" type="Label" parent="OptionsPanel/Sliders/SFXSlider" unique_id=1613072001]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "50%"
+horizontal_alignment = 1
+
+[node name="Buttons" type="Control" parent="OptionsPanel" unique_id=311687007]
+layout_mode = 1
+anchor_left = 0.086
+anchor_top = 0.84000003
+anchor_right = 0.91400003
+anchor_bottom = 0.95900005
+offset_left = 0.19400024
+offset_top = 0.17999268
+offset_right = -0.19403076
+offset_bottom = -0.057037354
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ExitToMenuButton" type="Button" parent="OptionsPanel/Buttons" unique_id=1157082538]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.16100001
+anchor_right = 0.407
+anchor_bottom = 0.83900005
+offset_top = 0.017999649
+offset_right = -39.367004
+offset_bottom = -0.018001556
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Exit to Menu"
+
+[node name="BackToGameButton" type="Button" parent="OptionsPanel/Buttons" unique_id=2118726160]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.563
+anchor_top = 0.16100001
+anchor_right = 0.95000005
+anchor_bottom = 0.83900005
+offset_left = 52.296967
+offset_top = 0.017999649
+offset_right = -3.0517578e-05
+offset_bottom = -0.018001556
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Back to Game"
+
+[connection signal="value_changed" from="OptionsPanel/Sliders/MusicSlider/HSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/Sliders/SFXSlider/HSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="OptionsPanel/Buttons/ExitToMenuButton" to="." method="_on_exit_to_menu_button_pressed"]
+[connection signal="pressed" from="OptionsPanel/Buttons/BackToGameButton" to="." method="_on_back_to_game_button_pressed"]
