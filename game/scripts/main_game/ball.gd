@@ -25,12 +25,13 @@ func reset() -> void:
 	moving = false
 
 func launch() -> void:
-	direction = Vector2(
-		randf_range(-1, 1),			# x
-		randf_range(-0.5, -1)		# y
-	).normalized()
-	
-	velocity = speed * direction
+	if not moving:
+		direction = Vector2(
+			randf_range(-1, 1),			# x
+			randf_range(-0.5, -1)		# y
+		).normalized()
+		
+		velocity = speed * direction
 
 func set_speed_incr(si: float) -> void:
 	speed_incr = si
