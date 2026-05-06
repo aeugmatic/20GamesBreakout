@@ -48,6 +48,18 @@ func generate_bricks(gridx: float = BRICK_SET_SIZE.x, gridy: float = BRICK_SET_S
 		for x in range(gridx):
 			var brick: StaticBody2D = brick_scene.instantiate()
 			
+			# Set brick color based on row
+			var color: String = ""
+			match y:
+				0: color = "red"
+				1: color = "purple"
+				2: color = "blue"
+				3: color = "green"
+				4: color = "yellow"
+				5: color = "grey"
+				_: color = "grey"
+			brick.set_color(color)
+			
 			brick.position = brick_pos + (0.5 * brick_size)	# brick_pos adjusted to be at the centre of the next brick
 			
 			# "increment" x to next brick's x
